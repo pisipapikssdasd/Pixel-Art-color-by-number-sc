@@ -1,11 +1,12 @@
-
+local sddd = true
 
 game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):ClickButton2(Vector2.new())
 end)
 
 while wait(0.1) do
-	
+	if sddd then
+		sddd = false
 		for i,v in pairs(game.Workspace["PixelOf_".. game.Players.LocalPlayer.UserId]:GetChildren()) do
 			 local s = v.CFrame
 			 v.CanCollide = false
@@ -16,4 +17,6 @@ while wait(0.1) do
 			 v.Transparency = 0
 			 v.CanCollide = true
 		end
+		sddd = true
+	end
 end
